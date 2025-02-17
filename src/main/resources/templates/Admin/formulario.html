@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- link css -->
+    <link rel="stylesheet" th:href="@{/css/Admin.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión y Registro de Proveedor</title>
+</head>
+
+<body>
+<video autoplay muted loop id="background-video">
+    <source th:src="@{/css/imag/3.mp4}" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+</video>
+<header>
+    <nav>
+        <a th:href="@{/}" class="logo">workana</a>
+        <ul>
+            <li><a th:href="@{/formularioProveedor}" class="btn quiero">Quiero trabajar</a></li>
+            <li><a th:href="@{/formularioCliente}" class="btn trabajar">Quiero contratar</a></li>
+            <li><a th:href="@{/formularioAdmin}" class="btn trabajar">Admin</a></li>
+            <li><a th:href="@{/formularioLogin}" class="btn trabajar">Login</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<div class="container">
+    <div class="box">
+        <div class="form sign_in">
+            <img th:src="@{/css/imag/ha.jpg}" alt="Descripción de la imagen" class="imagen">
+        </div>
+        <div class="form sign_up">
+            <h3>Registrarse como Admin</h3>
+            <span>Ingresa tus datos para registrarte</span>
+
+            <form th:action="@{/registrarAdmin}" th:object="${admin}" method="post" id="form_input">
+                <div class="type">
+                    <input type="text" th:field="*{nombre}" placeholder="Nombre Completo" id="nombre" required>
+                </div>
+                <div class="type">
+                    <input type="text" th:field="*{apellido}" placeholder="Apellido" id="apellido" required>
+                </div>
+                <div class="type">
+                    <input type="email" th:field="*{email}" placeholder="Correo Electrónico" id="email" required>
+                </div>
+                <div class="type">
+                    <input type="text" th:field="*{username}" placeholder="Nombre de Usuario" id="username" required>
+                </div>
+                <div class="type">
+                    <input type="password" th:field="*{password}" placeholder="Contraseña" id="password" required>
+                </div>
+                <div class="type">
+                    <select th:field="*{rol}" id="rol" required>
+                        <option value="" disabled selected>Selecciona el Rol</option>
+                        <option value="ADMIN">Admin</option>
+                        <!-- Puedes agregar más roles si es necesario -->
+                    </select>
+                </div>
+
+                <div class="type">
+                    <button type="submit" id="submit_button" class="btn bkg">Registrarse</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="page page_signIn">
+            <h3>¡Bienvenido Administrador!</h3>
+            <p>Para gestionar tu plataforma, por favor inicia sesión con tu cuenta de administrador.</p>
+
+            <button class="btn btnSign-in">Crear Cuenta <i class="bi bi-arrow-right"></i></button>
+        </div>
+
+        <div class="page page_signUp">
+            <h3>¡Hola Administrador!</h3>
+            <p>Si aún no tienes una cuenta, ingresa tus datos para crear tu cuenta de administrador.</p>
+
+            <button class="btn btnSign-up">
+                <i class="bi bi-arrow-left"></i> Administrar
+            </button>
+        </div>
+    </div>
+
+</div>
+<script th:src="@{/css/js/cliente.js}"></script>
+</body>
+</html>
