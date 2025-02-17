@@ -1,0 +1,95 @@
+/* Reset y variables globales */
+:root {
+    --primary-color: #007bff; /* Azul brillante */
+    --secondary-color: #6c757d; /* Gris */
+    --accent-color: #28a745; /* Verde */
+    --danger-color: #6f42c1; /* Morado (reemplaza el rojo) */
+    --warning-color: #fd7e14; /* Naranja (reemplaza el amarillo) */
+    --text-color: #343a40; /* Gris oscuro */
+    --bg-color: #f8f9fa; /* Fondo claro */
+    --footer-bg: #343a40; /* Fondo oscuro para el pie */
+    --link-color: #ffffff; /* Color de texto de los enlaces */
+    --btn-primary-color: #007bff; /* Azul para botones primarios */
+    --btn-secondary-color: #6c757d; /* Gris para botones secundarios */
+    --btn-success-color: #28a745; /* Verde para botones de éxito */
+    --btn-info-color: #17a2b8; /* Azul claro para botones de información */
+    --btn-warning-color: #fd7e14; /* Naranja para botones de advertencia */
+    --btn-danger-color: #6f42c1; /* Morado para botones de peligro */
+}
+
+/* Botones */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--btn-primary-color), #0056b3);
+    color: var(--link-color);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, var(--btn-primary-color));
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--btn-secondary-color), #5a6268);
+    color: var(--link-color);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268, var(--btn-secondary-color));
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--btn-success-color), #1e7e34);
+    color: var(--link-color);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #1e7e34, var(--btn-success-color));
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, var(--btn-info-color), #117a8b);
+    color: var(--link-color);
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #117a8b, var(--btn-info-color));
+    box-shadow: 0 4px 15px rgba(23, 162, 184, 0.4);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--btn-warning-color), #e36209);
+    color: var(--link-color);
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #e36209, var(--btn-warning-color));
+    box-shadow: 0 4px 15px rgba(253, 126, 20, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--btn-danger-color), #5a3d8e);
+    color: var(--link-color);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #5a3d8e, var(--btn-danger-color));
+    box-shadow: 0 4px 15px rgba(111, 66, 193, 0.4);
+}
