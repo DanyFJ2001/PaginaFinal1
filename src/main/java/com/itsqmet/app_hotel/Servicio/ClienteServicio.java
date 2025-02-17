@@ -85,4 +85,22 @@ public class ClienteServicio   {
 
     // Método para cargar un cliente por su nombre de usuario (similar a UserDetailsService)
 
+
+    public void initAdmin() {
+        crearAdmin("Administrador", "admin@email.com", "admin", "admin123");
+    }
+
+    @Transactional
+    public void crearAdmin(String nombre, String email, String username, String password) {
+        if (clienteRepositorio.findByUsername(username) == null) {
+            Cliente admin = new Cliente();
+            admin.setNombre(nombre);
+            admin.setEmail(email);
+            admin.setUsername(username);
+            admin.setPassword(passwordEncoder.encode(password));  // Encriptando la contraseña
+            admin.setRol(Rol.ADMIN);
+            clienteRepositorio.save(admin);
+        }
+    }
+
 }
