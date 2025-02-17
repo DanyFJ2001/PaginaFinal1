@@ -12,6 +12,6 @@ public class AdminInitializer {
 
 
     public void run(String... args) {
-        clienteServicio.crearAdmin("Administrador", "admin@gmail.com", "admin", "admin123");
+        clienteServicio.crearAdmin("Administrador", "fer","admin@gmail.com", "admin", "admin123");
     }
 }

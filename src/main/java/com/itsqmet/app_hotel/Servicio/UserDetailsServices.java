@@ -41,11 +41,6 @@ public class UserDetailsServices implements UserDetailsService {
                     List.of(new SimpleGrantedAuthority("ROLE_" + proveedor.getRol().toString())));
         }
 
-        Admin admin = adminRepositorio.findByUsername(username);
-        if (admin != null) {
-            return new User(admin.getUsername(), admin.getPassword(),
-                    List.of(new SimpleGrantedAuthority("ROLE_" + admin.getRol().toString())));
-        }
 
         throw new UsernameNotFoundException("Usuario no encontrado: " + username);
     }
